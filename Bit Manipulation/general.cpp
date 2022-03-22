@@ -17,10 +17,10 @@ int toggleBit(int n, int k)
 }
 
 // Function to check kth bit is set or not 
-//LSB is 1
+//LSB is 0
 bool isSet(int n, int k)
 {
-    if (n & (1 << (k - 1)))
+    if (n & (1 << k))
         return true;
     return false;
 }
