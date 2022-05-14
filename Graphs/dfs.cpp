@@ -32,7 +32,6 @@ vector<int> dfs(vector<vector<int>> adj, int n) {
 
 // method 2 using recursion
 void dfsHelp(int node, vector<vector<int>> &adj, vector<bool> &vis, vector<int> &dfsTrv) {
-	if (vis[node] == true) return;
 	vis[node] = true;
 	dfsTrv.push_back(node);
 
