@@ -10,15 +10,12 @@ int bs(int l, int r, int val, int arr[]) {
 }
 
 // using iteration
-
-  int l = 0, r = 4, val = 8;
+int bs(int l, int r, int val, vector<int> &arr){
 	while (l <= r) {
 		int mid = (l + r) / 2;
-		if (arr[mid] == val) {
-			cout << mid;
-			return;
-		}
+		if (arr[mid] == val) return mid;
 		if (arr[mid] > val) r = mid - 1;
-		if (arr[mid] < val) l = mid + 1;
+		else l = mid + 1;
 	}
-	cout << -1;
+	rteurn -1;
+}
