@@ -30,3 +30,14 @@ int upperBound(vector<int> &nums, int el){
     }
     return l;
 }
+
+// index of first greater or equal element than el
+int lowerBound(vector<int> &nums, int el){
+    int l = 0, h = nums.size()-1;
+    while(l <= h){
+        int mid = (l + h)/2;
+        if(nums[mid] < el) l = mid+1; // insted of <= it is <
+        else h = mid-1;
+    }
+    return l;
+}
