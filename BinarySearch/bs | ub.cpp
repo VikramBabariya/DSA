@@ -19,3 +19,14 @@ int bs(int l, int r, int val, vector<int> &arr){
 	}
 	rteurn -1;
 }
+
+// index of element immediate greater than el
+int upperBound(vector<int> &nums, int el){
+    int l = 0, h = nums.size()-1;
+    while(l <= h){
+        int mid = (l + h)/2;
+        if(nums[mid] <= el) l = mid+1;
+        else h = mid-1;
+    }
+    return l;
+}
