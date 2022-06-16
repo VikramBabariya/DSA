@@ -2,18 +2,19 @@
 class Solution {
     
     int combSumCnt(int i, vector<int> &sol, int &target, vector<int> &nums){
-        if(target == 0) return true;
-        if(i == nums.size()) return false;
+        if(target == 0) return 1;
+        if(i == nums.size()) return 0;
           
-  
+        int pos1 = 0, pos2 = 0;
         if(nums[i] <= target){
             sol.push_back(nums[i]);
             target -= nums[i];
-            if(combSumCnt(i+1, sol, target, nums)) return true;
+            pos1 = combSumCnt(i+1, sol, target, nums);
             sol.pop_back();
             target += nums[i];
         }
-        return combSumCnt(i+1, sol, target, nums);  
+        pos2 = combSumCnt(i+1, sol, target, nums);  
+        return pos1 + pos2; 
     }
     
     
