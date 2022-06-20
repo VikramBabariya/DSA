@@ -24,8 +24,7 @@ public:
     int search(vector<int>& nums, int target) {
         int n = nums.size();
         int pivot = findPivot(nums);
-        cout<<pivot<<endl;
-        if(pivot == n || target > nums[n-1]) return bs(0, pivot-1, target, nums); 
+        if(target > nums[n-1]) return bs(0, pivot-1, target, nums); 
         return bs(pivot, n-1, target, nums);  
     }
 };
