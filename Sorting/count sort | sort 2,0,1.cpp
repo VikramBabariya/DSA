@@ -1,4 +1,4 @@
-
+// count sort
 void sortColors(vector<int>& nums) {
     vector<int> cnt(3, 0);
     int n = nums.size();
@@ -13,7 +13,7 @@ void sortColors(vector<int>& nums) {
     }
 }
 
-
+// Two pointer 
 void sortColors(vector<int>& nums) {
     int low = 0, mid = 0, high = nums.size() - 1;
 
