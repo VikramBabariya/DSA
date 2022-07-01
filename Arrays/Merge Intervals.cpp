@@ -4,19 +4,15 @@ vector<vector<int>> merge(vector<vector<int>>& inters) {
 
     sort(inters.begin(), inters.end());
 
-    int low = inters[0][0] , high = inters[0][1];
+    vector<int> tempInter = inters[0]; 
     for(int i = 1; i < n; i++){
-        if(inters[i][0] <= high){
-            high = max(high, inters[i][1]);
-        }else{
-            vector<int> temp(2, 0);
-            temp[0] = low; temp[1] = high;
-            ans.push_back(temp);
-            low = inters[i][0]; high = inters[i][1];   
-        }
+    if(inters[i][0] <= tempInter[1]){
+        tempInter[1] = max(tempInter[1], inters[i][1]);
+    }else{
+        ans.push_back(tempInter);
+        tempInter = inters[i];   
     }
-    vector<int> temp(2, 0);
-    temp[0] = low; temp[1] = high;
-    ans.push_back(temp);
+    }
+    ans.push_back(tempInter);
     return ans;
 }
