@@ -18,10 +18,8 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
     }
 
     int n = ans.size();
-    for(int i = 0; i < n; i++){
-        if(i % 2 != 0){
-            reverse(begin(ans[i]), end(ans[i]));
-        }
+    for(int i = 1; i < n; i+=2){
+        reverse(begin(ans[i]), end(ans[i]));   
     }
     return ans;
 }
