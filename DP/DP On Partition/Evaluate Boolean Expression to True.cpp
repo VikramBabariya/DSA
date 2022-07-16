@@ -36,3 +36,42 @@ int evaluateExp(string & exp) {
     vector<vector<vector<ll>>> dp(n, vector<vector<ll>>(n, vector<ll>(2, -1)));
     return Ways(0, n-1, true, exp, dp);
 }
+
+//tabulation
+int evaluateExp(string & exp) {
+    int n = exp.size();
+    vector<vector<vector<ll>>> dp(n, vector<vector<ll>>(n, vector<ll>(2, 0)));
+    for(int i = n-1; i >= 0; i--){
+        for(int j = i; j < n; j++){
+            for(int isTrue = 0; isTrue <= 1; isTrue++){
+                if(i == j){
+                    if(isTrue) dp[i][j][isTrue] = exp[i] == 'T';
+                    else dp[i][j][isTrue] = exp[i] == 'F';
+                }
+                
+                ll totalWays = 0;
+                for(int k = i+1; k <= j-1; k+=2){
+                    ll lt = Ways(i, k-1, true, exp, dp);
+                    ll lf = Ways(i, k-1, false, exp, dp);
+                    ll rt = Ways(k+1, j, true, exp, dp);
+                    ll rf = Ways(k+1, j, false, exp, dp);
+
+                    if(exp[k] == '|'){
+                        if(isTrue) 
+                            totalWays = (totalWays + (lt * rt)%MOD + (lt * rf)%MOD + (lf * rt)%MOD)%MOD;
+                        else totalWays = (totalWays + (lf * rf)%MOD)%MOD;
+                    }else if(exp[k] == '&'){
+                        if(isTrue) totalWays = (totalWays + (lt * rt)%MOD)%MOD;
+                        else totalWays = (totalWays + (lf * rf)%MOD + (lt * rf)%MOD + (lf * rt)%MOD)%MOD;
+                    }else if(exp[k] == '^'){
+                        if(isTrue) totalWays = (totalWays + (lt * rf)%MOD + (lf * rt)%MOD)%MOD;
+                        else totalWays = (totalWays + (lf * rf)%MOD + (lt * rt)%MOD)%MOD;
+                    }
+                }
+                dp[i][j][isTrue] = totalWays%MOD;
+                
+            }
+        }
+    }
+    return dp[0][n-1][1];
+}
