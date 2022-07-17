@@ -40,3 +40,38 @@ int palindromePartitioning(string s) {
     }
     return dp[0] - 1;
 }
+
+// palindrome checking pre computation
+void preIsPal(string &s, int n, vector<vector<bool>> &isPal){
+    for(int k = 0; k < n; k++){
+        for(int j = k, i = 0; j < n && i < (n-k); j++, i++){
+            if(i == j) isPal[i][j] = true;
+            else if(j == i+1) isPal[i][j] = s[i] == s[j];
+            else if(s[i] == s[j] && isPal[i+1][j-1]) isPal[i][j] = true;
+            else isPal[i][j] = false;
+        }
+    }
+}
+
+int minPart(int i, string &s, int n, vector<vector<bool>> &isPal, vector<int> &dp){
+    if(i == n) return 0;
+    if(dp[i] != -1) return dp[i];
+    int minCost = INT_MAX;
+    for(int j = i; j < n; j++){
+        if(isPal[i][j]){
+            int cost = 1 + minPart(j+1, s, n, isPal, dp);
+            minCost = min(minCost, cost);
+        }
+    }
+    return dp[i] = minCost;
+}
+
+
+int minCut(string s) {
+    int n = s.size();
+    vector<vector<bool>> isPal(n, vector<bool>(n, true));
+    preIsPal(s, n, isPal);
+    vector<int> dp(n, -1);
+    return minPart(0, s, n, isPal, dp) - 1;
+}
+
