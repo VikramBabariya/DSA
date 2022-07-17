@@ -24,20 +24,10 @@ vector<vector<pair<int, int>>> UpdatedLevelOrder(TreeNode<int> * root, int &minV
     return ans;
 }
 
-static bool comp(pair<int, int> &p1, pair<int, int> &p2){
-    return p1.first < p2.first;
-}
-
-
-
 vector<vector<int>> verticalTraversal(TreeNode<int> * root) {
     int minVer = INT_MAX, maxVer = INT_MIN;
     vector<vector<pair<int, int>>> lot = UpdatedLevelOrder(root, minVer, maxVer);
-
-    for(int i = 0; i < lot.size(); i++){
-        sort(begin(lot[i]), end(lot[i]), comp);
-    }
-
+    
     int n = abs(minVer) + maxVer + 1;
     vector<vector<int>> ans(n);
 
