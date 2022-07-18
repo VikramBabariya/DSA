@@ -4,22 +4,22 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
 
     queue<TreeNode*> q;
     q.push(root);
+    bool leftToRight = true;
     while(!q.empty()){
-        vector<int> level;
         int qsize = q.size();
+        vector<int> level(qsize);
         for(int i = 0; i < qsize; i++){ 
             TreeNode *node = q.front();
             q.pop();
             if(node->left != NULL) q.push(node->left);
             if(node->right != NULL) q.push(node->right);
-            level.push_back(node->val);
+
+            int ind = (leftToRight) ? i : qsize - i - 1;
+            level[ind] = node->val;
         }
         ans.push_back(level);
+        leftToRight = !leftToRight;
     }
 
-    int n = ans.size();
-    for(int i = 1; i < n; i+=2){
-        reverse(begin(ans[i]), end(ans[i]));   
-    }
     return ans;
 }
