@@ -1,3 +1,37 @@
+//approach 1
+vector<vector<int>> verticalTraversal(TreeNode* root) {
+    map<int, map<int, multiset<int>>> grid;
+    queue<pair<TreeNode*, pair<int, int>>> q;
+    q.push({root, {0, 0}});
+
+    while(!q.empty()){
+        auto point = q.front();
+        q.pop();
+        TreeNode* node = point.first;
+        int ver = point.second.first, lev = point.second.second;
+
+        grid[ver][lev].insert(node->val);
+        if(node->left){
+            q.push({node->left, {ver-1, lev+1}});
+        }
+        if(node->right){
+            q.push({node->right, {ver+1, lev+1}});
+        }
+    }
+
+    vector<vector<int>> ans;
+    for(auto &verMap: grid){
+        vector<int> vertical;
+
+        for(auto levMap: verMap.second){
+            vertical.insert(vertical.end(), levMap.second.begin(), levMap.second.end());
+        }
+        ans.push_back(vertical);
+    }
+    return ans;
+}
+
+// approach 2
 vector<vector<pair<int, int>>> UpdatedLevelOrder(TreeNode* root, int &minVer, int &maxVer) {
     vector<vector<pair<int, int>>> ans;
     if(root == NULL) return ans;
