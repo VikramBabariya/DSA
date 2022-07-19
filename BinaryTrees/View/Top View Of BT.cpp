@@ -12,7 +12,7 @@ vector<int> getTopView(TreeNode<int> *root) {
         int ver = it.second;
         q.pop();
         
-        if(!mp.count(ver)) mp[ver] = node->val;
+        if(!mp.count(ver)) mp[ver] = node->val; // just write this for bottom view : mp[ver] = node->val;
         
         if(node->left) q.push({node->left, ver-1});
         if(node->right) q.push({node->right, ver+1});
