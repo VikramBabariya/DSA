@@ -11,10 +11,17 @@ int partition(vector<int> &arr, int low, int high){
     return j;
 }
 
+int randomPart(vector<int> &arr, int low, int high){
+    srand(time(NULL));
+    int ri = low + random() % (high - low + 1);
+    swap(arr[ri], arr[low]);
+    return partition(arr, low, high);
+}
+
 void qs(vector<int> &arr, int low, int high){
     if(low >= high) return;
 
-    int pi = partition(arr, low, high);
+    int pi = randomPart(arr, low, high);
     qs(arr, low, pi-1);
     qs(arr, pi+1, high);
 }
