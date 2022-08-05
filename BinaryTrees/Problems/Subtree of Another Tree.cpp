@@ -1,3 +1,29 @@
+//TC: O(N^2)
+bool isSameTree(TreeNode* p, TreeNode* q) {
+    if(p == NULL || q == NULL) return (p == q);
+
+    if(p->val != q->val) return false;
+
+    bool left = isSameTree(p->left, q->left);
+    if(!left) return false;
+    bool right = isSameTree(p->right, q->right);
+    if(!right) return false;
+
+    return true;
+}
+
+
+bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+    if(root == NULL) return false;
+
+    if(isSameTree(root, subRoot)) return true;
+
+    if(isSubtree(root->left, subRoot)) return true;
+    return isSubtree(root->right, subRoot);
+}
+// -----------------------------------------------------------
+
+//TC: O(N)
 bool isSameTree(TreeNode* p, TreeNode* q) {
     if(p == NULL || q == NULL) return (p == q);
 
