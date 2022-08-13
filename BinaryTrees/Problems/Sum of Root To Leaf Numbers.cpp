@@ -30,6 +30,7 @@ int sumRootToLeaf(TreeNode* root) {
 // O(N)
 int sumRootToLeaf(TreeNode* root, int val = 0) {
     if(root == NULL) return 0;
-    val = 2 * val + root->val;
+    val = 2 * val + root->val; // for decimal use val = 10 * val + root->val;
     return (root->left == NULL && root->right == NULL) ? val : sumRootToLeaf(root->left, val) + sumRootToLeaf(root->right, val);
 }
+
