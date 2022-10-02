@@ -23,6 +23,7 @@ int main(){
   int n, m;
   cin>>n>>m;
   vector<int> graph[n+1];
+//   vector<pair<int, int>> graph[n+1]; // for wighted graph
   for(int i = 0; i < m; i++){
     int u, v;
     cin>>u>>v;
