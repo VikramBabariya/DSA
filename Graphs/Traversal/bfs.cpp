@@ -14,13 +14,21 @@ vector<int> bfs(vector<vector<int>> adj, int n) {
 				int node = nodes.front();
 				nodes.pop();
 				bfsTrv.push_back(node);
-
-				for (auto adjNode : adj[node]) {
-					if (vis[adjNode] == false) {
-						nodes.push(adjNode);
-						vis[adjNode] = true;
+			
+				for(int i = 1; i < adj.size(); i++){
+					if (adj[node][i] == 1 && vis[i] == false) {
+						nodes.push(i);
+						vis[i] = true;
 					}
 				}
+				
+				//for adjList
+// 				for (auto adjNode : adj[node]) {
+// 					if (vis[adjNode] == false) {
+// 						nodes.push(adjNode);
+// 						vis[adjNode] = true;
+// 					}
+// 				}
 			}
 
 		}
