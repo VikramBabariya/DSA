@@ -1,3 +1,14 @@
+/**
+sol no.: 1
+Author: Vikram Babariya
+Problem: Rottening Oranges
+Source: Leetcode medium
+TC: O(n*m)
+SC: O(n*m)
+Approaching time: 20 min
+Coding time: 30 min
+**/
+
 class Solution {
     
     void initQ(queue<pair<int, int>> &cells, vector<vector<int>> &grid, int n, int m){
