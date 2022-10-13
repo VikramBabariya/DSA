@@ -52,5 +52,4 @@ void dfs(int i, int j, vector<vector<int>>& matrix, int n, int m, vector<vector<
 //         }
 //       }
 //     }
-    }
 }
