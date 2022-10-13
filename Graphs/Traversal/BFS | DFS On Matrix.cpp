@@ -38,7 +38,6 @@ void dfs(int i, int j, vector<vector<int>>& matrix, int n, int m, vector<vector<
     for(int k = 0; k < 4; k++){
         int ni = i + delRow[k], nj = j + delCol[k];
         if(ni >= 0 && nj >= 0 && ni < n && nj < m && visited[ni][nj] == false /* && some condition */){
-            visited[ni][nj] = true;
             dfs(n1, nj, matrix, n, m, visited);
         }
     }
