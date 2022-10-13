@@ -1,6 +1,6 @@
 // 1 based indexing
 vector<int> bfs(vector<vector<int>> adj, int n) {
-	vector<int> bfsTrv;
+// 	vector<int> bfsTrv;
 	vector<bool> vis(n + 1, false);
 	
 	for (int i = 1; i <= n; i++) {
@@ -13,7 +13,7 @@ vector<int> bfs(vector<vector<int>> adj, int n) {
 			while (!nodes.empty()) {
 				int node = nodes.front();
 				nodes.pop();
-				bfsTrv.push_back(node);
+// 				bfsTrv.push_back(node);
 			
 				for(int i = 1; i < adj.size(); i++){
 					if (adj[node][i] == 1 && vis[i] == false) {
