@@ -1,6 +1,8 @@
-void dfsHelp(int node, vector<vector<int>> &adj, vector<bool> &vis, vector<int> &dfsTrv) {
+//1 based indexing
+
+void dfsHelp(int node, vector<vector<int>> &adj, vector<bool> &vis /*, vector<int> &dfsTrv */) {
 	vis[node] = true;
-	dfsTrv.push_back(node);
+	//dfsTrv.push_back(node);
 	
 	// for adjMatrix
 	for (int i = 1; i < adj.size(); i++) {
