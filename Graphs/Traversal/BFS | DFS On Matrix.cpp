@@ -37,8 +37,8 @@ void dfs(int i, int j, vector<vector<int>>& matrix, int n, int m, vector<vector<
     int delRow[] = {-1, 0, +1, 0}, delCol[] = {0, +1, 0, -1};
     for(int k = 0; k < 4; k++){
         int ni = i + delRow[k], nj = j + delCol[k];
-        if(ni >= 0 && nj >= 0 && ni < n && nj < m && visited[ni][nj] == false /* && some condition */){
-            dfs(n1, nj, matrix, n, m, visited);
+        if(ni >= 0 && nj >= 0 && ni < n && nj < m && matrix[ni][nj] == 1 && visited[ni][nj] == false){
+            dfs(ni, nj, matrix, n, m, visited);
         }
     }
     // for 8 direction
@@ -59,6 +59,8 @@ vector<vector<bool>> visited(n, vector<bool>(m, false));
 
 for(int i = 0; i < n; i++){
     for(int j = 0; j < m; j++){
-        
+        if(matrix[i][j] == 1 && visited[i][j] == false){
+            dfs(i, j, matrix, n, m, visited);
+        }
     }
 }
