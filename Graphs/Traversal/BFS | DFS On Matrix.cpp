@@ -52,3 +52,13 @@ void dfs(int i, int j, vector<vector<int>>& matrix, int n, int m, vector<vector<
 //       }
 //     }
 }
+
+// main code
+int n = grid.size(), m = grid[0].size();
+vector<vector<bool>> visited(n, vector<bool>(m, false));
+
+for(int i = 0; i < n; i++){
+    for(int j = 0; j < m; j++){
+        
+    }
+}
