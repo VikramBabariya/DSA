@@ -1,32 +1,28 @@
 //1 based indexing
 
-void dfsHelp(int node, vector<vector<int>> &adj, vector<bool> &vis /*, vector<int> &dfsTrv */) {
-	vis[node] = true;
-	//dfsTrv.push_back(node);
+void dfs(int node, vector<vector<int>> &adj, vector<bool> &vis) {
+	vis[node] = 1;
 	
-	// for adjMatrix
-	for (int i = 1; i < adj.size(); i++) {
-            if (adj[node][i] == 1 && vis[i] == false) {
-                dfsHelp(i, adj, vis);
-            }
-        }
-	
-	// for adjList
-// 	for (auto adjNode : adj[node]) {
-// 		if (vis[adjNode] == false) {
-// 			dfsHelp(adjNode, adj, vis, dfsTrv);
-// 		}
-// 	}
-}
-
-vector<int> dfs(vector<vector<int>> adj, int n) {
-	vector<int> dfsTrv;
-	vector<bool> vis(n + 1, false);
-
-	for (int i = 1; i <= n; i++) {
-		if (vis[i] == false) {
-			dfsHelp(i, adj, vis, dfsTrv);
+	for (auto adjNode : adj[node]) {
+		if (vis[adjNode] == 0) {
+			dfs(adjNode, adj, vis, dfsTrv);
 		}
 	}
-	return dfsTrv;
+}
+
+// for adjMatrix
+for (int i = 1; i < adj.size(); i++) {
+    if (adj[node][i] == 1 && vis[i] == 0) {
+	dfsHelp(i, adj, vis);
+    }
+}
+
+void dfs(vector<vector<int>> adj, int n) {
+	vector<bool> vis(n + 1, 0);
+
+	for (int i = 1; i <= n; i++) {
+		if (vis[i] == 0) {
+			dfs(i, adj, vis);
+		}
+	}
 }
