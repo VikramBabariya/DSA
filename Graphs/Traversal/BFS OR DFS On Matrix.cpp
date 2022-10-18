@@ -1,4 +1,9 @@
 // bfs
+
+bool inRange(int i, int j, int n, int m){
+    return i >= 0 &&  j >= 0 &&  i < n && j < m;
+}
+
 void bfs(int si, int sj, vector<vector<int>>& matrix, int n, int m, vector<vector<int>>& state){
     queue<pair<int, int>> cells;
     cells.push({si, sj});
@@ -12,7 +17,7 @@ void bfs(int si, int sj, vector<vector<int>>& matrix, int n, int m, vector<vecto
         int delRow[] = {-1, 0, +1, 0}, delCol[] = {0, +1, 0, -1};
         for(int k = 0; k < 4; k++){
             int ni = i + delRow[k], nj = j + delCol[k];
-            if(ni >= 0 && nj >= 0 && ni < n && nj < m && state[ni][nj] == 0 /* && some condition */){
+            if(inRange(ni, nj, n, m) && state[ni][nj] == 0 /* && some condition */){
                 cells.push({ni, nj});
                 state[ni][nj] = 1;
             }
