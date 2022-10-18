@@ -19,7 +19,7 @@ void bfs(int si, int sj, vector<vector<int>>& matrix, int n, int m, vector<vecto
         }
         // for 8 direction
 //         for(int deli = -1; deli <= 1; deli++){
-//           for(int delj = -1; delj <= 1; delj++{
+//           for(int delj = -1; delj <= 1; delj++){
 //             int ni = i + deli, nj = j + delj;
 //             if(ni >= 0 && nj >= 0 && ni < n && nj < m && state[ni][nj] == 0 /* && some condition */){
 //                 cells.push({ni, nj});
