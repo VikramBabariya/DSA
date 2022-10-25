@@ -1,4 +1,6 @@
 //0 base + 1 base indexing
+//TC: O(1) , SC: O(N)
+
 class DisjointSet {
 	vector<int> rank, parent, size;
 
