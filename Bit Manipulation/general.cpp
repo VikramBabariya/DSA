@@ -25,6 +25,18 @@ bool isSet(int n, int k)
     return false;
 }
 
+vector<int> decToBinary(int n){
+    vector<int> binaryNum;
+
+    while (n > 0) {
+        binaryNum.push_back(n % 2);
+        n = n / 2;
+    }
+
+    reverse(binaryNum.begin(), binaryNum.end());
+    return binaryNum;
+}
+
 int main(){
 
     // test    
