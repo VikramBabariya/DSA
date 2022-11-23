@@ -34,3 +34,28 @@ vector<int> levelOrder(TreeNode* root) {
     }
     return ans;
 }
+
+//dfs way | tc:o(n), sc:o(h)
+int maxDepth(TreeNode* root) {
+    if(root == NULL) return 0;
+
+    int ld = maxDepth(root->left);
+    int rd = maxDepth(root->right);
+    return 1 + max(ld, rd);
+}
+
+void dfs(TreeNode* root, int depth, vector<vector<int>> &lot){
+    if(root == NULL) return;
+
+    dfs(root->left, depth+1, lot);
+    dfs(root->right, depth+1, lot);
+    lot[depth].push_back(root->val);
+}
+
+
+vector<vector<int>> levelOrder(TreeNode* root) {
+    int d = maxDepth(root);
+    vector<vector<int>> lot(d);
+    dfs(root, 0, lot);
+    return lot;
+}
