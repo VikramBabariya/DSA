@@ -1,3 +1,6 @@
+// TC: O(Q * logn)
+// SC: O(n)
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -20,24 +23,10 @@ void sieve() {
 	}
 }
 
-
-
-int main() {
-
-	sieve();
-	int q;
-	cin >> q;
-	while (q--) {
-		int k;
-		cin >> k;
-
-		while (k != 1) {
-			cout << minPrimeFactor[k] << " ";
-			k = k / minPrimeFactor[k];
-		}
-	}
-
-	return 0;
+// facorization of n
+while (n != 1) {
+	cout << minPrimeFactor[n] << " ";
+	n = n / minPrimeFactor[n];
 }
 
 
