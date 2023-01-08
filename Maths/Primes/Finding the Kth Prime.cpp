@@ -1,3 +1,5 @@
+// if maxN = 1e8 then this code will give tle
+
 #include<bits/stdc++.h>
 
 using namespace std;
