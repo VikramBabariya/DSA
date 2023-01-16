@@ -1,3 +1,11 @@
+/*
+s1. identify as sliding window problem (subarr or substring | window size | max or min)
+s2. caluclation (identify ds)
+s3. ans
+s4. slide window
+*/
+
+
 long maximumSumSubarray(int k, vector<int> &arr , int n){
     int i = 0, j = 0;
     long sum = 0, maxi = 0;
