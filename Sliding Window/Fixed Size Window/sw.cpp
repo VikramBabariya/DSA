@@ -10,13 +10,14 @@ long maximumSumSubarray(int k, vector<int> &arr , int n){
     int i = 0, j = 0;
     long sum = 0, maxi = 0;
     while(j < n){ // window breaking cond
-        if(j-i+1 < k){ // just grow window, dont calulate
-            sum += arr[j];
+        // calculation
+        sum += arr[j];
+        if(j-i+1 < k){
             j++;  
         } 
         else if(j-i+1 == k){
-            sum += arr[j];
-            maxi = max(maxi, sum); // calulation for window
+            // ans from calc
+            maxi = max(maxi, sum);
             // moving window
             sum -= arr[i];
             i++; j++;
