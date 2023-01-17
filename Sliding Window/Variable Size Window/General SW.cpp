@@ -25,3 +25,5 @@ while(j < n){
   return ans;
 }
 
+//  problems--  https://leetcode.com/problems/fruit-into-baskets/solutions/170740/java-c-python-sliding-window-for-k-elements/?orderBy=most_votes
+
