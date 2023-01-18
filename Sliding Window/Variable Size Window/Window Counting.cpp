@@ -1,32 +1,21 @@
-int atMostKDistinct(vector<int>& A,int n,int k){
-    int count = 0;
-    int left = 0;
-    int right = 0;
-    
+int atMostKDistinct(vector<int>& arr, int k){
+    int i = 0, j = 0, ans = 0;
     unordered_map<int,int> mp;
     
-    while(right < n){
-        
-        //add current element in the map
-        if(mp.find(A[right]) == mp.end()){
-            mp[A[right]] = 1;
-        }else{
-            mp[A[right]]++;
-        }
+    while(j < arr.size()){
+        mp[arr[j]]+=1;
         
         while(mp.size() > k){
-            mp[A[left]]--;
-            if(mp[A[left]] == 0){
-                mp.erase(A[left]);
+            mp[arr[i]]--;
+            if(mp[arr[i]] == 0){
+                mp.erase(arr[i]);
             }
-            left++;
+            i++;
         }
         
-        count += right-left+1;
-        right++;
+        ans += j-i+1; // prev elemnts of window + last added elemetn in window will create new (j-i+1) subarr
+        j++;
     }
-    
-    
-    return count;
+    return ans;
 }
 
