@@ -1,21 +1,32 @@
-int numberOfSubarrays(vector<int>& nums, int k) {
-    int i = -1, j = 0, ans = 0;
-    queue<int> oddPos;
-
-    while(j < nums.size()){
-        if(nums[j] % 2 != 0) oddPos.push(j);
-
-        if(oddPos.size() < k) j++;
-        else if(oddPos.size() == k){
-            ans += (oddPos.front() - i);
-            j++;
+int atMostKDistinct(vector<int>& A,int n,int k){
+    int count = 0;
+    int left = 0;
+    int right = 0;
+    
+    unordered_map<int,int> mp;
+    
+    while(right < n){
+        
+        //add current element in the map
+        if(mp.find(A[right]) == mp.end()){
+            mp[A[right]] = 1;
+        }else{
+            mp[A[right]]++;
         }
-        else{
-            i = oddPos.front();
-            oddPos.pop();
-            ans += (oddPos.front() - i);
-            j++;
+        
+        while(mp.size() > k){
+            mp[A[left]]--;
+            if(mp[A[left]] == 0){
+                mp.erase(A[left]);
+            }
+            left++;
         }
+        
+        count += right-left+1;
+        right++;
     }
-    return ans;
+    
+    
+    return count;
 }
+
