@@ -1,8 +1,4 @@
-Count Number of Nice Subarrays
-Replace the Substring for Balanced String
-Max Consecutive Ones III
-Binary Subarrays With Sum
-Subarrays with K Different Integers
-Fruit Into Baskets
-Shortest Subarray with Sum at Least K
-Minimum Size Subarray Sum
+https://leetcode.com/problems/count-the-number-of-good-subarrays/solutions/3052559/java-c-python-sliding-window/?orderBy=most_votes
+
+
+https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175088/c-maximum-sliding-window-cheatsheet-template/?orderBy=most_votes
