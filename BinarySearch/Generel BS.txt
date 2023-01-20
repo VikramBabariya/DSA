@@ -1,1 +1,10 @@
 https://leetcode.com/problems/koko-eating-bananas/solutions/769702/python-clear-explanation-powerful-ultimate-binary-search-template-solved-many-problems/?orderBy=most_votes
+
+
+--- NOtes 
+
+- our serching key will always be in range of low and high
+
+- in infinite sorted array right bound is not known so serach for right bound.
+
+- if key is not present then at end our l and r will point to keys nearest negbour.
