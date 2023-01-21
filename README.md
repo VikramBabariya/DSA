@@ -10,7 +10,7 @@ Some basic constraints and the safe time complexity :
 |For N <= 10^6 | O(N*Log(N))(sorting) |
 |For N <= 10^8 | O(N) |
 |For N >= 10^9 | O(Log(N)(Binary Search)) |
-
+---
 
 ## Debug Your Code
 
