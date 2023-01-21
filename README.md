@@ -1,3 +1,6 @@
+## Resources
+1.[Problem Solving Tips By Aditya Verma](https://www.youtube.com/playlist?list=PL_z_8CaSLPWcB1QSAgbdMqyq-KXDqBiZx)
+
 Some basic constraints and the safe time complexity :
 ---
 | N | Big Oh |
