@@ -1,0 +1,36 @@
+--------------  Resources -----------
+
+[Striver code beyond](https://www.youtube.com/watch?v=5rtVTYAk9KQ)
+
+
+
+
+
+
+
+
+
+
+ ------------ Tips -------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ------------------ Problems ----------------------
+ [](https://www.geeksforgeeks.org/find-element-appears-array-every-element-appears-twice/) --> Cancelation of same numbers can be done easily using xor operator
+ 
+ [calculate-xor-1-n](https://www.geeksforgeeks.org/calculate-xor-1-n/)  --> Try to observe patterns.
+ 
+ [](https://www.geeksforgeeks.org/find-xor-of-numbers-from-the-range-l-r/) --> Apply What yor already know, and fill the gap
