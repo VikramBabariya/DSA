@@ -16,6 +16,12 @@ int toggleBit(int n, int k)
     return (n ^ (1 << k));
 }
 
+// Clear the first set bit from lsb side
+n = n & n-1
+    
+// is a number power of two
+return (n & n-1) == 0;
+
 // Function to check kth bit is set or not 
 //LSB is 0
 bool isSet(int n, int k)
