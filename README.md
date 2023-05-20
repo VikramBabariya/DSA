@@ -25,3 +25,10 @@ Some basic constraints and the safe time complexity :
 2. Print stmt for every logical segment
 3. Stub the functions(segments)
 4. Commenting and Uncommenting to handle Segmentaion Fault
+
+---
+## Usefull State Diagrams 
+
+![IMG_20230520_103547](https://github.com/VikramBabariya/DSA/assets/83386820/dc298ecd-0f9a-4ff8-bcf2-1f66e264723c)
+
+![IMG_20230520_103638](https://github.com/VikramBabariya/DSA/assets/83386820/6113953c-47df-4879-aa82-5e5d8fc3ec01)
