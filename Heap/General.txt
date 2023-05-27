@@ -2,7 +2,8 @@
 
 ->sorting based soln (can be easily solved using sorting)
 -> K
--> smallest/largest
+-> smallest/minimum/closest ...
+->largest/maximum/top ...
 
 [Types]
 
