@@ -1,0 +1,20 @@
+[Identification]
+
+->sorting based soln (can be easily solved using sorting)
+-> K
+-> smallest/largest
+
+[Types]
+
+-> k + smallest -- max heap (because when smallest we can remove all bigger elements then kth smallest)
+-> k + largest -- min heap
+
+[Time Complexity]
+
+-> sorting -- O(nlogn)
+-> heap -- O(nlogk)
+
+[STL Syntax]
+
+-> Max Heap -- priority_queue<int> maxh;
+-> Min Heap -- priority_queue<int, vector<int>, greater<int>> minh;
