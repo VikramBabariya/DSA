@@ -1,6 +1,6 @@
 // recursive
 
-int modPow(long long x, long long y, int m){
+int modPow(int x, int y, int m){
     if (y == 0)
         return 1;
     long long p = modPow(x, y / 2, m);
@@ -11,11 +11,11 @@ int modPow(long long x, long long y, int m){
 }
 
 // iterative
-int modPow(long long x, long long y, int m){
+int modPow(int x, int y, int m){
     int ans = 1;
     for(int b = 0; b < 32; b++){
-        if(y & (1<<b)) ans = (ans * x) % m;
-        x = (x * x) % m;
+        if(y & (1<<b)) ans = (1ll * ans * x) % m;
+        x = (1ll * x * x) % m;
     }
     return ans;
 }
