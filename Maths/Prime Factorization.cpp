@@ -1,3 +1,34 @@
+// Bruteforce -- TC : O(N)
+
+vector<int> prime_fact(int n){
+	vector<int> pfact;
+	for(int i = 2; i <= n; i++){
+		while(n%i == 0){
+			pfact.push_back(i);
+			n /= i;
+		}
+	}
+	return pfact;
+}
+
+// Optimization TC : O(sqrt(N))
+// Fact : Every composite number has atleast one prime divisor which is less then sqrt(N)
+vector<int> prime_fact(int n){
+	vector<int> pfact;
+	for(int i = 2; i * i <= n; i++){
+		while(n%i == 0){
+			pfact.push_back(i);
+			n /= i;
+		}
+	}
+	if(i > 1) pfact.push_back(i);
+	return pfact;
+}
+
+
+
+
+
 // TC: O(Q * logn)
 // SC: O(n)
 
