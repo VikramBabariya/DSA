@@ -8,10 +8,19 @@ int modMulInv(int a, int m){
 }
 
 
-Fermat's Thm : a^(m-1) cong 1 (mod m) ; m is prime and a is not a multiple of m
-a^(m-2) cong a^-1 (mod m) ; 
+// Fermat's Thm : a^(m-1) cong 1 (mod m) ; m is prime and a is not a multiple of m
+// a^(m-2) cong a^-1 (mod m) ; 
 
-// TC : O(logM)
+// TC : O(logM) ; works if m is prime
 int modMulInv(int a, int m){
-  return binary_expo(a, m-2, m);
+  return modPow(a, m-2, m);
+}
+
+int modPow(int x, int y, int m){
+    int ans = 1;
+    for(int b = 0; b < 32; b++){
+        if(y & (1<<b)) ans = (1ll * ans * x) % m;
+        x = (1ll * x * x) % m;
+    }
+    return ans;
 }
